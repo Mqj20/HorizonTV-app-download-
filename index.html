@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#10051b">
 <meta name="description" content="HorizonTV — بوابتك إلى البث المباشر والرياضة والأفلام والمسلسلات.">
-<title>HorizonTV | التحميل الرسمي</title>
+<title>HorizonTV v10 | التحميل الرسمي</title>
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x2='1' y2='1'><stop offset='0' stop-color='%238b5cf6'/><stop offset='1' stop-color='%23ec4899'/></linearGradient></defs><rect width='100' height='100' rx='24' fill='url(%23g)'/><text x='50' y='70' font-family='Arial' font-size='52' font-weight='900' fill='white' text-anchor='middle'>H</text></svg>">
+<!-- استخدام الشعار الجديد -->
+<link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -88,7 +89,7 @@ h1{
   background:linear-gradient(100deg,#a78bfa,#f472b6,#c084fc);
   -webkit-background-clip:text;background-clip:text;color:transparent;
 }
-.subtitle{color:var(--muted);font-size:clamp(14px,2vw,18px);max-width:650px;margin:auto;line-height:1.9}
+.subtitle{color:var(--muted);font-size:clamp(14px,2vw,18px);max-width:750px;margin:auto;line-height:1.9}
 
 .hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
 .btn{
@@ -122,18 +123,23 @@ h1{
 .section-title h2{font-size:25px}
 .section-title p{color:var(--muted);font-size:13px;margin-top:4px}
 
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
 .feature{
-  position:relative;overflow:hidden;padding:22px;border-radius:22px;
+  position:relative;overflow:hidden;padding:25px;border-radius:22px;
   border:1px solid var(--line);background:linear-gradient(145deg,rgba(49,27,63,.72),rgba(19,10,28,.72));
+  transition: .3s;
+}
+.feature:hover{
+  border-color: rgba(139,92,246,.4);
+  transform: translateY(-3px);
 }
 .feature:after{
-  content:"";position:absolute;width:100px;height:100px;border-radius:50%;right:-45px;top:-45px;
-  background:rgba(139,92,246,.12);filter:blur(2px)
+  content:"";position:absolute;width:150px;height:150px;border-radius:50%;right:-50px;top:-50px;
+  background:rgba(139,92,246,.12);filter:blur(5px)
 }
-.icon{font-size:25px;margin-bottom:10px}
-.feature h3{font-size:16px;margin-bottom:5px}
-.feature p{font-size:12px;color:var(--muted);line-height:1.7}
+.icon{font-size:28px;margin-bottom:12px}
+.feature h3{font-size:17px;margin-bottom:8px;color: #f3e8ff;}
+.feature p{font-size:14px;color:var(--muted);line-height:1.8}
 
 .download{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;align-items:stretch}
 .download-main,.code-card{
@@ -141,7 +147,7 @@ h1{
   box-shadow:var(--shadow);padding:28px
 }
 .download-main h2{font-size:25px;margin-bottom:7px}
-.download-main>p{color:var(--muted);font-size:13px;line-height:1.8;margin-bottom:20px}
+.download-main>p{color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:20px}
 .download-buttons{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .download-btn{
   display:flex;align-items:center;gap:13px;padding:16px;border-radius:18px;
@@ -157,7 +163,7 @@ a.download-btn:hover{transform:translateY(-2px);border-color:rgba(236,72,153,.5)
 .code-card p{color:var(--muted);font-size:12px}
 .code{
   margin:18px auto 0;padding:14px 25px;border-radius:16px;
-  color:#fdf4ff;font-size:28px;font-weight:900;letter-spacing:7px;
+  color:#fdf4ff;font-size:32px;font-weight:900;letter-spacing:7px;
   background:linear-gradient(110deg,rgba(139,92,246,.16),rgba(236,72,153,.13));
   border:1px dashed rgba(236,72,153,.4)
 }
@@ -189,7 +195,7 @@ a.download-btn:hover{transform:translateY(-2px);border-color:rgba(236,72,153,.5)
 }
 
 @media(max-width:800px){
-  .features{grid-template-columns:1fr 1fr}
+  .features{grid-template-columns:1fr}
   .download{grid-template-columns:1fr}
   .gallery{grid-template-columns:repeat(2,1fr)}
 }
@@ -205,11 +211,6 @@ a.download-btn:hover{transform:translateY(-2px);border-color:rgba(236,72,153,.5)
   .gallery{grid-template-columns:1fr 1fr;gap:9px}
   .shot{min-height:150px;border-radius:16px}
 }
-
-.brand-sport{
-  display:inline-block;font-size:.72em;line-height:1;margin:0 .06em;vertical-align:middle;
-  transform:translateY(-.02em);filter:drop-shadow(0 0 5px rgba(255,255,255,.28));
-}
 </style>
 </head>
 
@@ -218,7 +219,8 @@ a.download-btn:hover{transform:translateY(-2px);border-color:rgba(236,72,153,.5)
 <header class="topbar">
   <div class="container nav">
     <a class="brand" href="#">
-      <img src="Screenshot_20261103_133653.jpg" alt="HorizonTV" style="object-fit:cover; width:42px; height:42px;">
+      <!-- الشعار الجديد -->
+      <img src="logo.png" alt="HorizonTV" style="object-fit:cover; width:42px; height:42px;">
       <span>HORIZON TV</span>
     </a>
     <div class="nav-badge">الإصدار الرسمي • v10</div>
@@ -227,7 +229,8 @@ a.download-btn:hover{transform:translateY(-2px);border-color:rgba(236,72,153,.5)
 
 <main>
   <section class="hero container">
-    <img class="hero-logo" src="Screenshot_20261103_133653.jpg" alt="شعار HorizonTV">
+    <!-- الشعار الجديد -->
+    <img class="hero-logo" src="logo.png" alt="شعار HorizonTV">
     <div class="eyebrow"><span class="dot"></span> منصة المشاهدة الذكية</div>
     <h1>HORIZON TV</h1>
     <p class="subtitle">
@@ -247,19 +250,33 @@ a.download-btn:hover{transform:translateY(-2px);border-color:rgba(236,72,153,.5)
     </div>
   </section>
 
+  <!-- قسم المميزات والنص الترويجي -->
   <section class="section container">
     <div class="section-title">
-      <h2>ماذا ستجد داخل HorizonTV؟</h2>
-      <p>مجموعة من الباقات والأقسام في مكان واحد</p>
+      <h2>🚀 اطلاق النسخة الأقوى رسمياً!</h2>
+      <p>انتقل بتجربة المشاهدة إلى مستوى استثنائي مع الإصدار الأحدث</p>
     </div>
 
     <div class="features">
-      <article class="feature"><div class="icon">⚽</div><h3>T<span class="brand-sport">⭐</span>D Sport & G</h3><p>باقات رياضية ومحتوى مباشر.</p></article>
-      <article class="feature"><div class="icon">📡</div><h3>BE<span class="brand-sport">⚽</span>IN Sports</h3><p>تصنيفات رياضية متعددة ضمن واجهة واحدة.</p></article>
-      <article class="feature"><div class="icon">🔥</div><h3>Alwan</h3><p>رياضة وترفيه ومحتوى متنوع.</p></article>
-      <article class="feature"><div class="icon">🏟️</div><h3>Kurd Sport</h3><p>قنوات رياضية ومباريات مباشرة.</p></article>
-      <article class="feature"><div class="icon">🎬</div><h3>Entertainment</h3><p>أفلام ومسلسلات وقنوات ترفيهية.</p></article>
-      <article class="feature"><div class="icon">🍿</div><h3>STAR<span class="brand-sport">⚽</span>PLAY & Alfajer</h3><p>أقسام إضافية للمشاهدة والترفيه.</p></article>
+      <article class="feature">
+        <div class="icon">💎</div>
+        <h3>لماذا HorizonTV v10؟</h3>
+        <p>
+          📺 <b>تنوع هائل:</b> ادعم شاشتك بأفضل دقة (LOW, SD, HD, FHD, 4K).<br><br>
+          ⚡ <b>أداء خارق:</b> تصفح سلس وسرعة فائقة في فتح القنوات.<br><br>
+          🛡️ <b>سيرفرات مستقرة:</b> مصادر بديلة تضمن عدم انقطاع البث.
+        </p>
+      </article>
+      
+      <article class="feature">
+        <div class="icon">🔥</div>
+        <h3>أضخم باقات البث المباشر</h3>
+        <p>
+          ⚽ <b>بي إن سبورت وتود:</b> تغطية شاملة لكافة البطولات العالمية.<br><br>
+          🎨 <b>ألوان الحصرية (Alwan):</b> قنوات رياضية مخصصة وعروض UFC و WWE بدقة 4K.<br><br>
+          🎬 <b>الترفيه المنزلي:</b> STARZPLAY, ALFAJER, وأحدث الأفلام والمسلسلات.
+        </p>
+      </article>
     </div>
   </section>
 
@@ -269,13 +286,11 @@ a.download-btn:hover{transform:translateY(-2px);border-color:rgba(236,72,153,.5)
         <h2>حمّل HorizonTV الآن</h2>
         <p>اختر طريقة التحميل المناسبة لجهازك للحصول على النسخة الرسمية.</p>
         <div class="download-buttons">
-          <!-- زر تحميل الهاتف -->
           <a class="download-btn" href="https://github.com/Mqj20/HorizonTV-app-download-/raw/main/HorizonTV_v10.apk">
             <span class="emoji">📱</span>
             <span><strong>هاتف / تابلت</strong><small>تحميل مباشر APK • v10</small></span>
           </a>
           
-          <!-- كود داونلودر -->
           <div class="download-btn" style="cursor: default; border-color: rgba(56, 189, 248, 0.5); background: rgba(56, 189, 248, 0.05);">
             <span class="emoji">📥</span>
             <span>
@@ -283,7 +298,6 @@ a.download-btn:hover{transform:translateY(-2px);border-color:rgba(236,72,153,.5)
               <small style="font-size: 16px; font-weight: 900; color: var(--cyan); letter-spacing: 2px;">4738895</small>
             </span>
           </div>
-          
         </div>
       </div>
 
@@ -303,16 +317,16 @@ a.download-btn:hover{transform:translateY(-2px);border-color:rgba(236,72,153,.5)
     </div>
 
     <div class="gallery">
+      <!-- تم استخدام الشعار الجديد هنا كصورة أولى، وباقي الصور كما هي -->
+      <div class="shot"><img src="logo.png" alt="شعار HorizonTV" loading="lazy"></div>
       <div class="shot"><img src="Screenshot_20261103_133710.jpg" alt="الشاشة الرئيسية" loading="lazy"></div>
       <div class="shot"><img src="Screenshot_20261103_133716.jpg" alt="قائمة القنوات" loading="lazy"></div>
       <div class="shot"><img src="Screenshot_20261103_133736.jpg" alt="مشغل المباريات" loading="lazy"></div>
       <div class="shot"><img src="Screenshot_20261103_133745.jpg" alt="قسم الفجر" loading="lazy"></div>
       <div class="shot"><img src="Screenshot_20261103_133754.jpg" alt="مشغل الأفلام" loading="lazy"></div>
-      <div class="shot"><img src="Screenshot_20261103_133653.jpg" alt="شاشة التفعيل" loading="lazy"></div>
     </div>
   </section>
 
-  <!-- قسم التلغرام -->
   <section class="section container" style="text-align: center; padding-top: 10px; padding-bottom: 0;">
     <p style="color: var(--muted); margin-bottom: 15px;">انضم إلينا للحصول على آخر التحديثات والأكواد</p>
     <a href="https://t.me/X_9_KKKKK" target="_blank" class="btn btn-telegram">
@@ -325,9 +339,9 @@ a.download-btn:hover{transform:translateY(-2px);border-color:rgba(236,72,153,.5)
 </main>
 
 <footer class="footer">
-  <img src="Screenshot_20261103_133653.jpg" alt="HorizonTV" style="object-fit:cover;">
+  <!-- الشعار الجديد في الفوتر -->
+  <img src="logo.png" alt="HorizonTV" style="object-fit:cover;">
   <p>HORIZON TV — تجربة مشاهدة عصرية، سريعة وفاخرة.</p>
-  <!-- الحقوق باللغة الإنجليزية -->
   <div class="rights">All rights reserved © Horizon TV Channel</div>
 </footer>
 
@@ -374,4 +388,4 @@ a.download-btn:hover{transform:translateY(-2px);border-color:rgba(236,72,153,.5)
 </script>
 
 </body>
-</html>
+</html> 
