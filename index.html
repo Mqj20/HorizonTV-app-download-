@@ -1,1 +1,215 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحميل تطبيق HorizonTV v10</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(30, 41, 59, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 35px 25px;
+            max-width: 540px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+        }
+        .logo-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border: 2px solid rgba(56, 189, 248, 0.3);
+        }
+        h1 {
+            font-size: 26px;
+            margin-bottom: 8px;
+            color: #38bdf8;
+        }
+        .version {
+            font-size: 13px;
+            background: #0284c7;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        p {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .screenshots {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+        .screenshots img {
+            width: 70px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: transform 0.3s ease;
+        }
+        .screenshots img:hover {
+            transform: scale(1.05);
+        }
+        /* قسم الباقات المتوفرة */
+        .features-box {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(56, 189, 248, 0.15);
+            border-radius: 14px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        .features-box h4 {
+            color: #38bdf8;
+            font-size: 15px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            font-size: 13px;
+            color: #cbd5e1;
+        }
+        .features-grid div {
+            background: rgba(30, 41, 59, 0.6);
+            padding: 6px 10px;
+            border-radius: 8px;
+            border-right: 3px solid #0284c7;
+        }
+        /* تخطيط الخانتين الرئيسيتين للتحميل */
+        .download-sections {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        .download-card {
+            flex: 1;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 14px;
+            padding: 18px 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .download-card:hover {
+            border-color: rgba(56, 189, 248, 0.6);
+            transform: translateY(-2px);
+        }
+        .download-card h3 {
+            font-size: 15px;
+            color: #38bdf8;
+            margin-bottom: 12px;
+        }
+        .btn {
+            display: block;
+            background: linear-gradient(135deg, #0284c7, #0369a1);
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(2, 132, 199, 0.4);
+        }
+        .btn:hover {
+            background: linear-gradient(135deg, #0369a1, #0284c7);
+            box-shadow: 0 6px 16px rgba(2, 132, 199, 0.6);
+        }
+        .code-box {
+            background: rgba(15, 23, 42, 0.7);
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px dashed rgba(56, 189, 248, 0.3);
+            font-size: 14px;
+            color: #e2e8f0;
+        }
+        .code-box span {
+            color: #38bdf8;
+            font-weight: bold;
+            font-size: 16px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
 
+    <div class="container">
+        <!-- شعار التطبيق -->
+        <img src="1006682117.jpg" alt="HorizonTV Logo" class="logo-img">
+        
+        <h1>HorizonTV</h1>
+        <div class="version">الإصدار الرسمي v10</div>
+        <p>استمتع بتجربة مشاهدة مميزة، جودات متعددة، وأضخم الباقات الرياضية والترفيهية بين يديك.</p>
+        
+        <!-- صور معاينة التطبيق -->
+        <div class="screenshots">
+            <img src="1006682121.jpg" alt="Screen 1">
+            <img src="1006682122.jpg" alt="Screen 2">
+            <img src="1006682124.jpg" alt="Screen 3">
+        </div>
+
+        <!-- قسم الباقات المتوفرة -->
+        <div class="features-box">
+            <h4>🌟 أبرز الباقات المتوفرة في التطبيق</h4>
+            <div class="features-grid">
+                <div>⚽ TOD Sport & G</div>
+                <div>⚡ BEIN Sports (أصناف متعددة)</div>
+                <div>🔥 Alwan (رياضة, UFC, WWE)</div>
+                <div>📺 Kurd Sport </div>
+                <div>🎬 Bien Entertainment</div>
+                <div>🍿 Starzplay & Alfajer</div>
+            </div>
+        </div>
+
+        <!-- خانات التحميل المنفصلة -->
+        <div class="download-sections">
+            <div class="download-card">
+                <h3>📱 هاتف / تابلت</h3>
+                <a href="HorizonTV_v10.apk" class="btn">تحميل النسخة 📥</a>
+            </div>
+            <div class="download-card">
+                <h3>📺 Android TV</h3>
+                <a href="HorizonTV_v10.apk" class="btn">تحميل النسخة 📥</a>
+            </div>
+        </div>
+
+        <!-- كود التفعيل -->
+        <div class="code-box">
+            كود التفعيل: <span>27</span>
+        </div>
+    </div>
+
+</body>
+</html>
