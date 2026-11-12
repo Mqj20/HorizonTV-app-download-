@@ -3,134 +3,204 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#090b16">
-  <meta name="description" content="Horizon TV — الموقع الرسمي لتحميل التطبيق والحصول على آخر التحديثات.">
-  <title>Horizon TV | الموقع الرسمي</title>
+  <meta name="theme-color" content="#070910">
+  <meta name="description" content="Horizon TV — الموقع الرسمي. استعدوا للإطلاق يوم 20 نوفمبر 2026 الساعة الرابعة عصراً بتوقيت العراق.">
+  <title>HORIZON TV | الموقع الرسمي</title>
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg:#090b16; --panel:#111629; --panel2:#151d35; --line:rgba(255,255,255,.1);
-      --text:#f7f8ff; --muted:#aab3c9; --accent:#4f8cff; --accent2:#35d4c7;
-      --shadow:0 24px 70px rgba(0,0,0,.38);
+    :root{
+      --bg:#070910;--panel:#11131d;--panel2:#171522;--gold:#ffd36a;
+      --gold2:#ffad32;--orange:#ff641f;--red:#a92d16;--text:#fff9ed;
+      --muted:#b9b1a3;--line:rgba(255,197,92,.18);
+      --glow:rgba(255,135,35,.22);--shadow:0 25px 80px rgba(0,0,0,.48)
     }
     *{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
-    body{font-family:'Cairo',Tahoma,sans-serif;color:var(--text);min-height:100vh;overflow-x:hidden;
-      background:radial-gradient(circle at 15% 8%,rgba(79,140,255,.17),transparent 30%),
-      radial-gradient(circle at 88% 18%,rgba(53,212,199,.10),transparent 26%),var(--bg)}
+    body{
+      min-height:100vh;overflow-x:hidden;color:var(--text);
+      font-family:'Cairo',Tahoma,sans-serif;
+      background:
+        radial-gradient(ellipse at 50% -10%,rgba(255,119,25,.20),transparent 42%),
+        radial-gradient(ellipse at 5% 45%,rgba(255,183,65,.07),transparent 28%),
+        radial-gradient(ellipse at 95% 70%,rgba(176,45,18,.10),transparent 30%),var(--bg)
+    }
+    body:before{
+      content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;opacity:.22;
+      background-image:radial-gradient(#ffcf78 1px,transparent 1px);
+      background-size:47px 47px;mask-image:linear-gradient(to bottom,black,transparent 78%)
+    }
     a{color:inherit;text-decoration:none}
-    .container{width:min(1100px,92%);margin:auto}
-    .topbar{position:sticky;top:0;z-index:20;background:rgba(9,11,22,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-    .nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.5px}
-    .brand img{width:43px;height:43px;border-radius:13px;object-fit:cover;background:#1a2340}
-    .version{font-size:12px;color:#cfe0ff;border:1px solid rgba(79,140,255,.35);background:rgba(79,140,255,.1);padding:7px 13px;border-radius:99px}
-    .hero{text-align:center;padding:72px 0 38px}
-    .hero-logo{width:132px;height:132px;border-radius:32px;object-fit:cover;background:#17213b;border:1px solid var(--line);box-shadow:0 18px 55px rgba(0,0,0,.4)}
-    .eyebrow{display:inline-block;margin-top:22px;padding:7px 14px;border:1px solid rgba(53,212,199,.3);background:rgba(53,212,199,.08);border-radius:99px;color:#a9fff5;font-size:12px;font-weight:800}
-    h1{font-size:clamp(38px,7vw,66px);line-height:1.2;margin:13px 0;background:linear-gradient(100deg,#fff,#8eb8ff,#61e4d7);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900}
-    .lead{max-width:720px;margin:auto;color:var(--muted);line-height:2;font-size:15px}
-    .actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:26px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:51px;padding:0 23px;border-radius:15px;font:800 14px 'Cairo',sans-serif;transition:.2s}
-    .btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
-    .primary{background:linear-gradient(110deg,var(--accent),#3868e8);box-shadow:0 12px 30px rgba(79,140,255,.25)}
-    .secondary{background:rgba(255,255,255,.05);border:1px solid var(--line)}
-    .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:38px 0 10px}
-    .stat,.card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(21,29,53,.9),rgba(15,20,37,.88));border-radius:20px}
-    .stat{padding:16px}.stat strong{display:block;font-size:22px}.stat span{color:var(--muted);font-size:12px}
-    section{padding:30px 0}
-    .section-head{text-align:center;margin-bottom:22px}.section-head h2{font-size:25px}.section-head p{color:var(--muted);font-size:13px;margin-top:5px}
-    .features{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-    .card{padding:23px}.card .icon{font-size:27px;margin-bottom:8px}.card h3{font-size:17px;margin-bottom:7px}.card p{color:var(--muted);font-size:14px;line-height:1.9}
-    .download-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:15px}
-    .download-card{padding:25px;border-radius:25px;border:1px solid var(--line);background:linear-gradient(145deg,#17213c,#101629);box-shadow:var(--shadow)}
-    .download-card h2{font-size:24px}.download-card>p{color:var(--muted);font-size:13px;line-height:1.9;margin:6px 0 18px}
-    .download-links{display:grid;grid-template-columns:1fr 1fr;gap:11px}
-    .download-link{display:flex;align-items:center;gap:12px;padding:15px;border:1px solid var(--line);border-radius:16px;background:rgba(255,255,255,.04);transition:.2s}
-    .download-link:hover{border-color:rgba(79,140,255,.6);transform:translateY(-2px)}
-    .download-link .emoji{font-size:25px}.download-link strong{display:block;font-size:14px}.download-link small{display:block;color:var(--muted);font-size:10px}
-    .codes{display:grid;gap:12px;align-content:center;text-align:center}
-    .code-box{padding:17px;border:1px dashed rgba(53,212,199,.45);border-radius:17px;background:rgba(53,212,199,.06)}
-    .code-box span{display:block;color:var(--muted);font-size:12px}.code-box strong{display:block;font-size:29px;letter-spacing:3px;color:#9cfff4}
-    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    .shot{height:220px;border-radius:18px;overflow:hidden;border:1px solid var(--line);background:#131a2d;cursor:pointer}
-    .shot img{width:100%;height:100%;object-fit:cover;display:block;transition:.3s}.shot:hover img{transform:scale(1.04)}
-    .telegram{text-align:center;padding:20px 0 35px}.telegram p{color:var(--muted);margin-bottom:13px;font-size:13px}
-    .telegram .btn{background:#229ed9}
-    footer{text-align:center;padding:28px 0 35px;border-top:1px solid var(--line);color:var(--muted);font-size:12px}
-    footer img{width:42px;height:42px;object-fit:cover;border-radius:12px;margin-bottom:8px}
-    .modal{display:none;position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:18px}
-    .modal.open{display:flex}.modal img{max-width:95vw;max-height:88vh;border-radius:15px}
-    .close{position:absolute;top:15px;left:18px;border:1px solid var(--line);background:#141a2b;color:white;border-radius:50%;width:42px;height:42px;font-size:24px}
-    @media(max-width:760px){.features,.download-grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.shot{height:190px}}
-    @media(max-width:520px){.hero{padding-top:48px}.hero-logo{width:115px;height:115px}.stats{grid-template-columns:1fr}.download-links{grid-template-columns:1fr}.nav{min-height:62px}.version{font-size:10px}.gallery{gap:8px}.shot{height:155px}}
+    .container{width:min(1120px,92%);margin:auto}
+    .topbar{position:sticky;top:0;z-index:30;background:rgba(7,9,16,.88);backdrop-filter:blur(18px);box-shadow:0 8px 35px rgba(0,0,0,.25)}
+    .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:1px;color:var(--gold);font-size:18px}
+    .brand img{width:48px;height:48px;object-fit:cover;border-radius:14px;box-shadow:0 0 24px rgba(255,164,54,.25)}
+    .official{font-size:11px;font-weight:900;letter-spacing:1.5px;color:#171009;background:linear-gradient(110deg,#fff0b0,#ffc34f,#ff8b2b);padding:8px 16px;border-radius:30px;box-shadow:0 5px 22px rgba(255,160,40,.18)}
+    .hero{text-align:center;padding:68px 0 35px}
+    .logo-wrap{position:relative;width:min(290px,68vw);margin:0 auto 24px}
+    .logo-wrap:before{content:"";position:absolute;inset:13%;border-radius:50%;background:rgba(255,128,20,.23);filter:blur(48px);z-index:-1}
+    .hero-logo{width:100%;display:block;border-radius:28px;filter:drop-shadow(0 18px 36px rgba(0,0,0,.55));}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 17px;border-radius:30px;color:#ffe4a0;background:rgba(255,155,42,.08);box-shadow:inset 0 0 0 1px rgba(255,191,89,.22);font-size:12px;font-weight:800}
+    .eyebrow i{width:7px;height:7px;border-radius:50%;background:#ff8a25;box-shadow:0 0 13px #ff8a25}
+    h1{font-size:clamp(39px,7vw,72px);line-height:1.18;margin:16px 0 10px;font-weight:900;letter-spacing:2px;background:linear-gradient(100deg,#fff4c7 5%,#ffd05d 42%,#ff8b35 78%,#ffe6a1);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{max-width:720px;margin:auto;color:var(--muted);font-size:15px;line-height:2.1}
+    .hero-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:25px}
+    .btn{min-height:51px;padding:0 24px;display:inline-flex;align-items:center;justify-content:center;gap:9px;border-radius:15px;font:900 13px 'Cairo',sans-serif;transition:.22s;cursor:pointer}
+    .btn:hover{transform:translateY(-3px);filter:brightness(1.1)}
+    .btn-gold{color:#211204;background:linear-gradient(110deg,#ffe9a4,#ffc34d 52%,#ff8528);box-shadow:0 10px 30px rgba(255,137,34,.22)}
+    .btn-ghost{color:#ffe0a0;background:rgba(255,255,255,.035);box-shadow:inset 0 0 0 1px var(--line)}
+    .countdown{position:relative;max-width:820px;margin:42px auto 12px;padding:30px 24px 25px;border-radius:28px;overflow:hidden;background:linear-gradient(145deg,rgba(34,25,22,.97),rgba(13,14,22,.98));box-shadow:var(--shadow),inset 0 0 0 1px rgba(255,190,83,.23)}
+    .countdown:before{content:"";position:absolute;width:260px;height:260px;top:-180px;right:calc(50% - 130px);border-radius:50%;background:#ff8a22;filter:blur(100px);opacity:.22}
+    .count-title{position:relative;color:var(--gold);font-size:22px;font-weight:900}
+    .count-desc{position:relative;color:var(--muted);font-size:12px;margin:5px 0 22px}
+    .timer{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;direction:ltr}
+    .time-box{padding:17px 8px 13px;border-radius:18px;background:linear-gradient(150deg,#211a18,#11121a);box-shadow:inset 0 0 0 1px rgba(255,194,93,.18),0 10px 25px rgba(0,0,0,.2)}
+    .time-box strong{display:block;font-size:clamp(28px,5vw,44px);font-weight:900;color:#ffcf69;font-variant-numeric:tabular-nums;text-shadow:0 0 20px rgba(255,157,45,.2)}
+    .time-box span{font-size:11px;color:#c7b79b}
+    .date-line{position:relative;margin-top:20px;color:#ffe2a0;font-weight:800;font-size:13px;line-height:2}
+    .status{position:relative;display:inline-flex;margin-top:13px;padding:8px 17px;border-radius:30px;background:rgba(255,137,36,.10);box-shadow:inset 0 0 0 1px rgba(255,177,76,.2);color:#ffc477;font-size:11px;font-weight:800}
+    section{padding:34px 0}
+    .section-head{text-align:center;margin-bottom:23px}
+    .section-head h2{font-size:26px;color:var(--gold);font-weight:900}
+    .section-head p{font-size:12px;color:var(--muted);margin-top:5px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+    .card{padding:23px;border-radius:21px;background:linear-gradient(145deg,rgba(28,25,28,.95),rgba(14,16,24,.96));box-shadow:inset 0 0 0 1px var(--line),0 14px 38px rgba(0,0,0,.18);transition:.22s}
+    .card:hover{transform:translateY(-4px);box-shadow:inset 0 0 0 1px rgba(255,198,94,.4),0 18px 42px rgba(0,0,0,.28)}
+    .card .icon{font-size:27px;margin-bottom:9px}
+    .card h3{font-size:16px;color:#ffdb91;margin-bottom:6px}
+    .card p{font-size:12px;color:var(--muted);line-height:2}
+    .launch-panel{max-width:900px;margin:auto;padding:27px;border-radius:26px;background:linear-gradient(145deg,#1d1918,#10121b);box-shadow:var(--shadow),inset 0 0 0 1px var(--line)}
+    .launch-top{text-align:center;margin-bottom:20px}
+    .launch-top h2{color:var(--gold);font-size:23px;font-weight:900}
+    .launch-top p{color:var(--muted);font-size:12px;margin-top:4px}
+    .locked{text-align:center;padding:27px 15px;border-radius:20px;background:rgba(255,255,255,.025);box-shadow:inset 0 0 0 1px rgba(255,190,83,.13)}
+    .lock-icon{font-size:38px;margin-bottom:7px}
+    .locked h3{color:#ffda91;font-size:17px}
+    .locked p{color:var(--muted);font-size:12px;line-height:2;margin-top:5px}
+    .unlocked{display:none}
+    .unlocked.show{display:block}
+    .download-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}
+    .download-box,.screen-code{padding:22px;border-radius:19px;background:rgba(255,255,255,.025);box-shadow:inset 0 0 0 1px rgba(255,190,83,.15)}
+    .download-box h3,.screen-code h3{color:#ffdc99;font-size:17px;margin-bottom:7px}
+    .download-box p,.screen-code p{color:var(--muted);font-size:12px;line-height:1.9}
+    .download-links{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:17px}
+    .download-link{min-height:66px;padding:12px;display:flex;align-items:center;gap:11px;border-radius:15px;background:linear-gradient(135deg,rgba(255,176,55,.13),rgba(255,255,255,.025));box-shadow:inset 0 0 0 1px rgba(255,192,85,.2);transition:.2s}
+    .download-link:hover{transform:translateY(-3px);box-shadow:inset 0 0 0 1px rgba(255,208,112,.55)}
+    .download-link .emoji{font-size:25px}
+    .download-link strong{display:block;color:#ffe0a2;font-size:12px}
+    .download-link small{display:block;color:var(--muted);font-size:10px}
+    .screen-code{text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center}
+    .screen-code .code{direction:ltr;display:inline-block;margin:12px 0;padding:10px 18px;border-radius:13px;color:#ffda83;background:rgba(255,164,48,.09);box-shadow:inset 0 0 0 1px rgba(255,194,88,.24);font-size:30px;font-weight:900;letter-spacing:5px}
+    .telegram-btn{margin-top:12px;background:#188fc4;color:white}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+    .shot{height:220px;overflow:hidden;border-radius:18px;background:#11131c;box-shadow:inset 0 0 0 1px var(--line);cursor:pointer}
+    .shot img{width:100%;height:100%;display:block;object-fit:cover;transition:.35s}
+    .shot:hover img{transform:scale(1.055)}
+    .telegram{text-align:center;padding:25px 0 42px}
+    .telegram p{font-size:13px;color:var(--muted);margin-bottom:13px}
+    footer{text-align:center;padding:28px 0 35px;color:var(--muted);font-size:11px}
+    footer img{width:58px;height:58px;object-fit:cover;border-radius:16px;margin-bottom:8px;box-shadow:0 0 25px rgba(255,157,42,.17)}
+    footer strong{display:block;color:var(--gold);font-size:16px;letter-spacing:1px}
+    .modal{display:none;position:fixed;inset:0;z-index:60;background:rgba(0,0,0,.94);align-items:center;justify-content:center;padding:18px}
+    .modal.open{display:flex}
+    .modal img{max-width:95vw;max-height:88vh;border-radius:15px}
+    .close{position:absolute;top:15px;left:18px;width:42px;height:42px;border:0;border-radius:50%;background:#21180f;color:#fff;font-size:25px}
+    @media(max-width:760px){.features{grid-template-columns:1fr 1fr}.download-grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.shot{height:190px}}
+    @media(max-width:520px){.hero{padding-top:45px}.nav{min-height:65px}.brand{font-size:15px}.brand img{width:42px;height:42px}.official{font-size:10px;padding:7px 12px}.timer{gap:7px}.time-box{padding:14px 3px 11px}.countdown{padding:24px 12px}.count-title{font-size:19px}.features{grid-template-columns:1fr}.download-links{grid-template-columns:1fr}.gallery{gap:8px}.shot{height:155px}.launch-panel{padding:17px}}
   </style>
 </head>
 <body>
-<header class="topbar"><div class="container nav">
-  <a class="brand" href="#"><img src="logo.png" alt="Horizon TV"><span>HORIZON TV</span></a>
-  <span class="version">الإصدار الرسمي • V13.7</span>
-</div></header>
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#">
+      <img src="logo.png" alt="شعار Horizon TV">
+      <span>HORIZON TV</span>
+    </a>
+    <span class="official">OFFICIAL</span>
+  </div>
+</header>
 
 <main>
   <section class="hero container">
-    <img class="hero-logo" src="logo.png" alt="شعار Horizon TV">
-    <div class="eyebrow">● الموقع الرسمي لـ Horizon TV</div>
-    <h1>HORIZON TV</h1>
-    <p class="lead">بوابتك إلى تجربة مشاهدة عصرية. حمّل التطبيق، وتابع آخر الإصدارات والتحديثات من الموقع الرسمي.</p>
-    <div class="actions">
-      <a class="btn primary" href="#download">⬇ تحميل التطبيق</a>
-      <a class="btn secondary" href="#preview">▣ معاينة التطبيق</a>
+    <div class="logo-wrap">
+      <img class="hero-logo" src="logo.png" alt="الشعار الرسمي لـ Horizon TV">
     </div>
-    <div class="stats">
-      <div class="stat"><strong>V13.7</strong><span>الإصدار الحالي</span></div>
-      <div class="stat"><strong>HD / 4K</strong><span>جودات متعددة حسب المصدر</span></div>
-      <div class="stat"><strong>Android</strong><span>نسخة الهواتف والأجهزة المتوافقة</span></div>
+    <div class="eyebrow"><i></i> الموقع الرسمي لـ HORIZON TV</div>
+    <h1>HORIZON TV</h1>
+    <p class="lead">استعدوا لتجربة مختلفة… عالم Horizon TV يعود بإطلالة تليق بكم. تابعوا العد التنازلي وكونوا أول من يكتشف الإطلاق الرسمي.</p>
+
+    <div class="countdown" aria-live="polite">
+      <div class="count-title">🔥 العد التنازلي للإطلاق</div>
+      <div class="count-desc">باقي وقت قليل ونلتقي في الموعد المنتظر</div>
+      <div class="timer">
+        <div class="time-box"><strong id="days">00</strong><span>يوم</span></div>
+        <div class="time-box"><strong id="hours">00</strong><span>ساعة</span></div>
+        <div class="time-box"><strong id="minutes">00</strong><span>دقيقة</span></div>
+        <div class="time-box"><strong id="seconds">00</strong><span>ثانية</span></div>
+      </div>
+      <div class="date-line">📅 الجمعة، 20 نوفمبر 2026<br>🕓 الساعة 4:00 عصراً — بتوقيت العراق</div>
+      <div class="status" id="status">🔒 الإطلاق لم يبدأ بعد</div>
+    </div>
+
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="#download">🔥 منطقة التحميل</a>
+      <a class="btn btn-ghost" href="#preview">▣ استكشف التطبيق</a>
     </div>
   </section>
 
   <section class="container">
-    <div class="section-head"><h2>مميزات Horizon TV</h2><p>واجهة سهلة وتجربة استخدام منظمة</p></div>
+    <div class="section-head"><h2>تجربة Horizon TV</h2><p>كل ما تحتاجه بتصميم واضح وتجربة مرتبة</p></div>
     <div class="features">
-      <article class="card"><div class="icon">⚡</div><h3>أداء سلس</h3><p>تنقل واضح وسريع بين أقسام التطبيق، مع واجهة مصممة لتسهيل الوصول إلى المحتوى.</p></article>
-      <article class="card"><div class="icon">📺</div><h3>أقسام متنوعة</h3><p>تنظيم القنوات والمحتوى الترفيهي والرياضي ضمن تجربة استخدام واحدة.</p></article>
+      <article class="card"><div class="icon">⚡</div><h3>تجربة سلسة</h3><p>واجهة منظمة وسهلة تساعدك على الوصول إلى الأقسام بسرعة.</p></article>
+      <article class="card"><div class="icon">📺</div><h3>أقسام متنوعة</h3><p>تنظيم المحتوى والقنوات ضمن تجربة مشاهدة واحدة.</p></article>
+      <article class="card"><div class="icon">🔥</div><h3>تحديثات Horizon</h3><p>تابع الإعلانات والأخبار الجديدة من القناة الرسمية.</p></article>
     </div>
   </section>
 
   <section class="container" id="download">
-    <div class="section-head"><h2>تحميل التطبيق</h2><p>الإصدار V13.7 — اسم ملف التثبيت HorizonTV_V13.7.apk</p></div>
-    <div class="download-grid">
-      <div class="download-card">
-        <h2>احصل على Horizon TV</h2>
-        <p>روابط التحميل أدناه جاهزة للربط. أضف ملف APK إلى مستودع GitHub أو أرسل الملف حتى نضع رابط التنزيل الفعلي ونتأكد منه.</p>
-        <div class="download-links">
-          <a class="download-link" href="https://raw.githubusercontent.com/Mqj20/HorizonTV-app-download-/main/HorizonTV_V13.7.apk" target="_blank" rel="noopener">
-            <span class="emoji">📱</span><span><strong>تحميل الهاتف</strong><small>تنزيل مباشر • APK V13.7</small></span>
-          </a>
-          <a class="download-link" href="https://raw.githubusercontent.com/Mqj20/HorizonTV-app-download-/main/HorizonTV_V13.7.apk" target="_blank" rel="noopener">
-            <span class="emoji">⬇️</span><span><strong>تحميل مباشر</strong><small>تنزيل مباشر • APK V13.7</small></span>
-          </a>
-        </div>
+    <div class="launch-panel">
+      <div class="launch-top">
+        <h2>🚀 منطقة الإطلاق والتحميل</h2>
+        <p>سيتم إظهار روابط التحميل وكود الشاشة عند حلول موعد الإطلاق</p>
       </div>
-      <div class="download-card codes">
-        <div class="code-box">
-          <span>للحصول على كود تفعيل التطبيق</span>
-          <a class="btn" href="https://t.me/X_9_KKKKK" target="_blank" rel="noopener"
-             style="margin-top:10px;background:#229ed9;color:#fff;min-height:44px;">
-            ✈ انضم إلى قناة التلغرام
-          </a>
+
+      <div class="locked" id="locked">
+        <div class="lock-icon">🔐</div>
+        <h3>منطقة الإطلاق مغلقة مؤقتاً</h3>
+        <p>روابط التحميل وكود الشاشة راح تظهر تلقائياً بعد انتهاء العد التنازلي.</p>
+      </div>
+
+      <div class="unlocked" id="unlocked">
+        <div class="download-grid">
+          <div class="download-box">
+            <h3>🔥 تحميل Horizon TV</h3>
+            <p>الإصدار الرسمي أصبح متاحاً. اختر رابط التحميل المناسب لجهازك.</p>
+            <div class="download-links">
+              <a class="download-link" href="https://raw.githubusercontent.com/Mqj20/HorizonTV-app-download-/main/HorizonTV_V13.7.apk" target="_blank" rel="noopener">
+                <span class="emoji">📱</span><span><strong>تحميل التطبيق</strong><small>تنزيل ملف APK</small></span>
+              </a>
+              <a class="download-link" href="https://raw.githubusercontent.com/Mqj20/HorizonTV-app-download-/main/HorizonTV_V13.7.apk" target="_blank" rel="noopener">
+                <span class="emoji">⬇️</span><span><strong>تحميل مباشر</strong><small>رابط التنزيل المباشر</small></span>
+              </a>
+            </div>
+          </div>
+          <div class="screen-code">
+            <h3>🎬 كود الشاشة</h3>
+            <p>استخدم الكود التالي على الشاشات المتوافقة</p>
+            <div class="code">1688201</div>
+            <p>للحصول على كود التفعيل ومتابعة التعليمات</p>
+            <a class="btn telegram-btn" href="https://t.me/X_9_KKKKK" target="_blank" rel="noopener">✈ قناة التلغرام الرسمية</a>
+          </div>
         </div>
-        <div class="code-box"><span>كود الشاشات</span><strong>1688201</strong></div>
-        <div class="code-box"><span>الإصدار</span><strong>V13.7</strong></div>
       </div>
     </div>
   </section>
 
   <section class="container" id="preview">
-    <div class="section-head"><h2>صور التطبيق</h2><p>سيتم استبدال الصور المؤقتة بصور الهوية الجديدة التي سترفعها</p></div>
+    <div class="section-head"><h2>لقطات من التطبيق</h2><p>اضغط على أي صورة لمشاهدتها بحجم أكبر</p></div>
     <div class="gallery">
       <div class="shot"><img src="logo.png" alt="شعار Horizon TV" loading="lazy"></div>
       <div class="shot"><img src="Screenshot_20261103_133710.jpg" alt="واجهة التطبيق" loading="lazy"></div>
@@ -142,22 +212,63 @@
   </section>
 
   <section class="telegram container">
-    <p>تابع القناة الرسمية للحصول على الأخبار والتحديثات</p>
-    <a class="btn" href="https://t.me/X_9_KKKKK" target="_blank" rel="noopener">✈ قناة التلغرام الرسمية</a>
+    <p>تابع القناة الرسمية حتى توصلك أخبار الإطلاق والتحديثات أولاً بأول</p>
+    <a class="btn telegram-btn" href="https://t.me/X_9_KKKKK" target="_blank" rel="noopener">✈ تابع Horizon TV على تلغرام</a>
   </section>
 </main>
 
-<footer><img src="logo.png" alt="Horizon TV"><div>HORIZON TV — الموقع الرسمي</div><div>All rights reserved © Horizon TV</div></footer>
-<div class="modal" id="modal"><button class="close" aria-label="إغلاق">×</button><img id="modalImg" alt="معاينة الصورة"></div>
+<footer>
+  <img src="logo.png" alt="Horizon TV">
+  <strong>HORIZON TV</strong>
+  <div>الموقع الرسمي • جميع الحقوق محفوظة © 2026</div>
+</footer>
+
+<div class="modal" id="modal">
+  <button class="close" aria-label="إغلاق">×</button>
+  <img id="modalImg" alt="معاينة الصورة">
+</div>
+
 <script>
-  const modal=document.getElementById('modal'), modalImg=document.getElementById('modalImg');
-  document.querySelectorAll('.shot img').forEach(img=>img.addEventListener('click',()=>{
-    modalImg.src=img.src; modal.classList.add('open'); document.body.style.overflow='hidden';
+  // موعد الإطلاق: الجمعة 20 نوفمبر 2026، الساعة 4:00 مساءً بتوقيت العراق (UTC+3)
+  const releaseAt = new Date("2026-11-20T16:00:00+03:00").getTime();
+  const $ = id => document.getElementById(id);
+
+  function updateCountdown(){
+    const remaining = releaseAt - Date.now();
+
+    if(remaining <= 0){
+      $("days").textContent = "00";
+      $("hours").textContent = "00";
+      $("minutes").textContent = "00";
+      $("seconds").textContent = "00";
+      $("status").textContent = "🔥 تم فتح الإطلاق!";
+      $("locked").style.display = "none";
+      $("unlocked").classList.add("show");
+      return;
+    }
+
+    $("days").textContent = String(Math.floor(remaining / 86400000)).padStart(2,"0");
+    $("hours").textContent = String(Math.floor((remaining % 86400000) / 3600000)).padStart(2,"0");
+    $("minutes").textContent = String(Math.floor((remaining % 3600000) / 60000)).padStart(2,"0");
+    $("seconds").textContent = String(Math.floor((remaining % 60000) / 1000)).padStart(2,"0");
+  }
+  updateCountdown();
+  setInterval(updateCountdown,1000);
+
+  const modal = $("modal"), modalImg = $("modalImg");
+  document.querySelectorAll(".shot img").forEach(img => img.addEventListener("click",()=>{
+    modalImg.src = img.src;
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
   }));
-  function closeModal(){modal.classList.remove('open');modalImg.src='';document.body.style.overflow='';}
-  modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
-  document.querySelector('.close').addEventListener('click',closeModal);
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+  function closeModal(){
+    modal.classList.remove("open");
+    modalImg.src = "";
+    document.body.style.overflow = "";
+  }
+  modal.addEventListener("click",e=>{if(e.target === modal) closeModal();});
+  document.querySelector(".close").addEventListener("click",closeModal);
+  document.addEventListener("keydown",e=>{if(e.key === "Escape") closeModal();});
 </script>
 </body>
 </html>
