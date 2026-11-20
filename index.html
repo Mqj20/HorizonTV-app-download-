@@ -108,6 +108,11 @@
     .modal.open{display:flex}
     .modal img{max-width:95vw;max-height:88vh;border-radius:15px}
     .close{position:absolute;top:15px;left:18px;width:42px;height:42px;border:0;border-radius:50%;background:#21180f;color:#fff;font-size:25px}
+    #fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:80}
+    .toast{position:fixed;top:90px;left:50%;transform:translate(-50%,-30px);opacity:0;z-index:90;padding:14px 26px;border-radius:40px;font-weight:900;font-size:16px;color:#211204;background:linear-gradient(110deg,#ffe9a4,#ffc34d 52%,#ff8528);box-shadow:0 12px 40px rgba(255,137,34,.45);transition:.5s;white-space:nowrap}
+    .toast.show{opacity:1;transform:translate(-50%,0)}
+    @keyframes pop{0%{transform:scale(.9)}50%{transform:scale(1.04)}100%{transform:scale(1)}}
+    .unlocked.show{animation:pop .7s ease}
     @media(max-width:760px){.features{grid-template-columns:1fr 1fr}.download-grid{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.shot{height:190px}}
     @media(max-width:520px){.hero{padding-top:45px}.nav{min-height:65px}.brand{font-size:15px}.brand img{width:42px;height:42px}.official{font-size:10px;padding:7px 12px}.timer{gap:7px}.time-box{padding:14px 3px 11px}.countdown{padding:24px 12px}.count-title{font-size:19px}.features{grid-template-columns:1fr}.download-links{grid-template-columns:1fr}.gallery{gap:8px}.shot{height:155px}.launch-panel{padding:17px}}
   </style>
@@ -174,27 +179,6 @@
       </div>
 
       <div class="unlocked" id="unlocked">
-        <div class="download-grid">
-          <div class="download-box">
-            <h3>🔥 تحميل Horizon TV</h3>
-            <p>الإصدار الرسمي أصبح متاحاً. اختر رابط التحميل المناسب لجهازك.</p>
-            <div class="download-links">
-              <a class="download-link" href="https://raw.githubusercontent.com/Mqj20/HorizonTV-app-download-/main/HorizonTV_V13.7.apk" target="_blank" rel="noopener">
-                <span class="emoji">📱</span><span><strong>تحميل التطبيق</strong><small>تنزيل ملف APK</small></span>
-              </a>
-              <a class="download-link" href="https://raw.githubusercontent.com/Mqj20/HorizonTV-app-download-/main/HorizonTV_V13.7.apk" target="_blank" rel="noopener">
-                <span class="emoji">⬇️</span><span><strong>تحميل مباشر</strong><small>رابط التنزيل المباشر</small></span>
-              </a>
-            </div>
-          </div>
-          <div class="screen-code">
-            <h3>🎬 كود الشاشة</h3>
-            <p>استخدم الكود التالي على الشاشات المتوافقة</p>
-            <div class="code">1688201</div>
-            <p>للحصول على كود التفعيل ومتابعة التعليمات</p>
-            <a class="btn telegram-btn" href="https://t.me/X_9_KKKKK" target="_blank" rel="noopener">✈ قناة التلغرام الرسمية</a>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -203,11 +187,11 @@
     <div class="section-head"><h2>لقطات من التطبيق</h2><p>اضغط على أي صورة لمشاهدتها بحجم أكبر</p></div>
     <div class="gallery">
       <div class="shot"><img src="logo.png" alt="شعار Horizon TV" loading="lazy"></div>
-      <div class="shot"><img src="Screenshot_20261103_133710.jpg" alt="واجهة التطبيق" loading="lazy"></div>
-      <div class="shot"><img src="Screenshot_20261103_133716.jpg" alt="قائمة القنوات" loading="lazy"></div>
-      <div class="shot"><img src="Screenshot_20261103_133736.jpg" alt="مشغل التطبيق" loading="lazy"></div>
-      <div class="shot"><img src="Screenshot_20261103_133745.jpg" alt="قسم التطبيق" loading="lazy"></div>
-      <div class="shot"><img src="Screenshot_20261103_133754.jpg" alt="واجهة المشاهدة" loading="lazy"></div>
+      <div class="shot"><img src="Screenshot_20261107_064547.jpg" alt="واجهة التطبيق" loading="lazy"></div>
+      <div class="shot"><img src="Screenshot_20261107_064607.jpg" alt="قائمة القنوات" loading="lazy"></div>
+      <div class="shot"><img src="Screenshot_20261107_064622.jpg" alt="مشغل التطبيق" loading="lazy"></div>
+      <div class="shot"><img src="Screenshot_20261107_064634.jpg" alt="قسم التطبيق" loading="lazy"></div>
+      <div class="shot"><img src="Screenshot_20261107_064658.jpg" alt="واجهة المشاهدة" loading="lazy"></div>
     </div>
   </section>
 
@@ -223,6 +207,8 @@
   <div>الموقع الرسمي • جميع الحقوق محفوظة © 2026</div>
 </footer>
 
+<canvas id="fx"></canvas>
+<div class="toast" id="toast">🎉 انطلق Horizon TV! 🎉</div>
 <div class="modal" id="modal">
   <button class="close" aria-label="إغلاق">×</button>
   <img id="modalImg" alt="معاينة الصورة">
@@ -231,7 +217,30 @@
 <script>
   // موعد الإطلاق: الجمعة 20 نوفمبر 2026، الساعة 4:00 مساءً بتوقيت العراق (UTC+3)
   const releaseAt = new Date("2026-11-20T16:00:00+03:00").getTime();
+  const DATA = "CiAgICAgICAgPGRpdiBjbGFzcz0iZG93bmxvYWQtZ3JpZCI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJkb3dubG9hZC1ib3giPgogICAgICAgICAgICA8aDM+8J+UpSDYqtit2YXZitmEIEhvcml6b24gVFY8L2gzPgogICAgICAgICAgICA8cD7Yp9mE2KXYtdiv2KfYsSDYp9mE2LHYs9mF2Yog2KPYtdio2K0g2YXYqtin2K3Yp9mLLiDYp9iu2KrYsSDYsdin2KjYtyDYp9mE2KrYrdmF2YrZhCDYp9mE2YXZhtin2LPYqCDZhNis2YfYp9iy2YMuPC9wPgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJkb3dubG9hZC1saW5rcyI+CiAgICAgICAgICAgICAgPGEgY2xhc3M9ImRvd25sb2FkLWxpbmsiIGhyZWY9Imh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9NcWoyMC9Ib3Jpem9uVFYtYXBwLWRvd25sb2FkLS9tYWluL0hvcml6b25UVi5hcGsiIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIj4KICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPSJlbW9qaSI+8J+TsTwvc3Bhbj48c3Bhbj48c3Ryb25nPtiq2K3ZhdmK2YQg2KfZhNiq2LfYqNmK2YI8L3N0cm9uZz48c21hbGw+2KrZhtiy2YrZhCDZhdmE2YEgQVBLPC9zbWFsbD48L3NwYW4+CiAgICAgICAgICAgICAgPC9hPgogICAgICAgICAgICAgIDxhIGNsYXNzPSJkb3dubG9hZC1saW5rIiBocmVmPSJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTXFqMjAvSG9yaXpvblRWLWFwcC1kb3dubG9hZC0vbWFpbi9Ib3Jpem9uVFYuYXBrIiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciI+CiAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0iZW1vamkiPuKsh++4jzwvc3Bhbj48c3Bhbj48c3Ryb25nPtiq2K3ZhdmK2YQg2YXYqNin2LTYsTwvc3Ryb25nPjxzbWFsbD7Ysdin2KjYtyDYp9mE2KrZhtiy2YrZhCDYp9mE2YXYqNin2LTYsTwvc21hbGw+PC9zcGFuPgogICAgICAgICAgICAgIDwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9InNjcmVlbi1jb2RlIj4KICAgICAgICAgICAgPGgzPvCfjqwg2YPZiNivINin2YTYtNin2LTYqTwvaDM+CiAgICAgICAgICAgIDxwPtin2LPYqtiu2K/ZhSDYp9mE2YPZiNivINin2YTYqtin2YTZiiDYudmE2Ykg2KfZhNi02KfYtNin2Kog2KfZhNmF2KrZiNin2YHZgtipPC9wPgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJjb2RlIj43ODg4NjY5PC9kaXY+CiAgICAgICAgICAgIDxwPtmE2YTYrdi12YjZhCDYudmE2Ykg2YPZiNivINin2YTYqtmB2LnZitmEINmI2YXYqtin2KjYudipINin2YTYqti52YTZitmF2KfYqjwvcD4KICAgICAgICAgICAgPGEgY2xhc3M9ImJ0biB0ZWxlZ3JhbS1idG4iIGhyZWY9Imh0dHBzOi8vdC5tZS9YXzlfS0tLS0siIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIj7inIgg2YLZhtin2Kkg2KfZhNiq2YTYutix2KfZhSDYp9mE2LHYs9mF2YrYqTwvYT4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2Pg==";
   const $ = id => document.getElementById(id);
+
+
+  function celebrate(){
+    const cv=$("fx"),ctx=cv.getContext("2d"),colors=["#ffd36a","#ffad32","#ff641f","#fff0b0","#ffffff","#ff8b35"];
+    const fit=()=>{cv.width=innerWidth;cv.height=innerHeight};fit();addEventListener("resize",fit);
+    let ps=[];
+    const burst=(x,y,n)=>{for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,v=3+Math.random()*7;
+      ps.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-3,g:.12+Math.random()*.08,w:5+Math.random()*7,h:3+Math.random()*5,r:Math.random()*6,vr:(Math.random()-.5)*.4,c:colors[Math.random()*colors.length|0],life:150+Math.random()*90})}};
+    const rain=()=>{for(let i=0;i<6;i++)ps.push({x:Math.random()*cv.width,y:-10,vx:(Math.random()-.5)*2,vy:2+Math.random()*3,g:.03,w:6,h:9,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:colors[Math.random()*colors.length|0],life:260})};
+    const t=$("toast");t.classList.add("show");setTimeout(()=>t.classList.remove("show"),5000);
+    let n=0,end=Date.now()+7000;
+    const shoot=setInterval(()=>{burst(cv.width*(.15+Math.random()*.7),cv.height*(.15+Math.random()*.35),55);if(++n>9)clearInterval(shoot)},550);
+    burst(cv.width/2,cv.height*.35,120);
+    (function loop(){
+      ctx.clearRect(0,0,cv.width,cv.height);
+      if(Date.now()<end)rain();
+      ps=ps.filter(p=>p.life>0&&p.y<cv.height+20);
+      for(const p of ps){p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.vx*=.99;p.r+=p.vr;p.life--;
+        ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.globalAlpha=Math.min(1,p.life/40);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore()}
+      if(ps.length||Date.now()<end)requestAnimationFrame(loop);else ctx.clearRect(0,0,cv.width,cv.height);
+    })();
+  }
 
   function updateCountdown(){
     const remaining = releaseAt - Date.now();
@@ -243,7 +252,9 @@
       $("seconds").textContent = "00";
       $("status").textContent = "🔥 تم فتح الإطلاق!";
       $("locked").style.display = "none";
+      if(!$("unlocked").dataset.ok){$("unlocked").innerHTML=new TextDecoder().decode(Uint8Array.from(atob(DATA),c=>c.charCodeAt(0)));$("unlocked").dataset.ok=1}
       $("unlocked").classList.add("show");
+      if(!window.__celebrated){window.__celebrated=1;celebrate();}
       return;
     }
 
