@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#070910">
-  <meta name="description" content="Horizon TV — الموقع الرسمي. استعدوا للإطلاق يوم 20 نوفمبر 2026 الساعة الرابعة عصراً بتوقيت العراق.">
-  <title>HORIZON TV | الموقع الرسمي</title>
+  <meta name="description" content="Horizon TV — الموقع الرسمي. HORIZON TV V14 — بث مباشر وباقات ترفيهية، خاص للمنزل والترفيه.">
+  <title>HORIZON TV V14 | خاص للمنزل والترفيه</title>
   <link rel="icon" type="image/png" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -52,6 +52,19 @@
     .btn:hover{transform:translateY(-3px);filter:brightness(1.1)}
     .btn-gold{color:#211204;background:linear-gradient(110deg,#ffe9a4,#ffc34d 52%,#ff8528);box-shadow:0 10px 30px rgba(255,137,34,.22)}
     .btn-ghost{color:#ffe0a0;background:rgba(255,255,255,.035);box-shadow:inset 0 0 0 1px var(--line)}
+
+    .v14-launch{padding:30px 24px;text-align:center;border:1px solid rgba(255,205,112,.28);background:radial-gradient(circle at 50% 0%,rgba(255,174,61,.17),transparent 55%),linear-gradient(145deg,#211a17,#0e111a)}
+    .version-pill{display:inline-flex;align-items:center;gap:12px;margin:16px 0 12px;padding:10px 19px;border-radius:30px;background:linear-gradient(110deg,#fff0b8,#ffc34d,#ff8b35);color:#241506;font-weight:900;letter-spacing:1px;box-shadow:0 8px 28px rgba(255,154,43,.2)}
+    .version-pill span{font-size:10px;letter-spacing:0;color:#315b25}
+    .v14-launch .count-desc{font-size:14px;color:#f1d9ad;margin:8px 0 10px}
+    .v14-launch .date-line{font-size:15px}
+    .feature-intro{max-width:760px;margin:0 auto 22px;text-align:center;color:#d8c9ae;font-size:13px;line-height:2}
+    .package-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .package-chip{padding:15px 12px;border-radius:16px;text-align:center;background:linear-gradient(145deg,rgba(255,190,85,.11),rgba(255,255,255,.025));box-shadow:inset 0 0 0 1px rgba(255,196,96,.17)}
+    .package-chip strong{display:block;color:#ffe0a2;font-size:14px}
+    .package-chip small{display:block;color:var(--muted);font-size:10px;margin-top:4px}
+    .toast{white-space:normal;width:min(92vw,520px);text-align:center}
+    @media(max-width:520px){.package-grid{grid-template-columns:1fr 1fr}.v14-launch{padding:24px 14px}}
     .countdown{position:relative;max-width:820px;margin:42px auto 12px;padding:30px 24px 25px;border-radius:28px;overflow:hidden;background:linear-gradient(145deg,rgba(34,25,22,.97),rgba(13,14,22,.98));box-shadow:var(--shadow),inset 0 0 0 1px rgba(255,190,83,.23)}
     .countdown:before{content:"";position:absolute;width:260px;height:260px;top:-180px;right:calc(50% - 130px);border-radius:50%;background:#ff8a22;filter:blur(100px);opacity:.22}
     .count-title{position:relative;color:var(--gold);font-size:22px;font-weight:900}
@@ -133,23 +146,18 @@
     <div class="logo-wrap">
       <img class="hero-logo" src="logo.png" alt="الشعار الرسمي لـ Horizon TV">
     </div>
-    <div class="eyebrow"><i></i> الموقع الرسمي لـ HORIZON TV</div>
+    <div class="eyebrow"><i></i> الإصدار الجديد V14</div>
     <h1>HORIZON TV</h1>
-    <p class="lead">استعدوا لتجربة مختلفة… عالم Horizon TV يعود بإطلالة تليق بكم. تابعوا العد التنازلي وكونوا أول من يكتشف الإطلاق الرسمي.</p>
+    <p class="lead">عالم متكامل للمنزل والترفيه؛ بث مباشر وباقات رياضية وترفيهية، مع مكتبة تضم أكثر من 20,000 فيلم و15,000 مسلسل.</p>
 
-    <div class="countdown" aria-live="polite">
-      <div class="count-title">🔥 العد التنازلي للإطلاق</div>
-      <div class="count-desc">باقي وقت قليل ونلتقي في الموعد المنتظر</div>
-      <div class="timer">
-        <div class="time-box"><strong id="days">00</strong><span>يوم</span></div>
-        <div class="time-box"><strong id="hours">00</strong><span>ساعة</span></div>
-        <div class="time-box"><strong id="minutes">00</strong><span>دقيقة</span></div>
-        <div class="time-box"><strong id="seconds">00</strong><span>ثانية</span></div>
-      </div>
-      <div class="date-line">📅 الجمعة، 20 نوفمبر 2026<br>🕓 الساعة 4:00 عصراً — بتوقيت العراق</div>
-      <div class="status" id="status">🔒 الإطلاق لم يبدأ بعد</div>
+
+    <div class="countdown v14-launch" aria-live="polite">
+      <div class="count-title">✨ تم إطلاق الإصدار الجديد</div>
+      <div class="version-pill">VERSION 14 <span>● متاح الآن</span></div>
+      <div class="count-desc">عذراً على تأجيل الموعد، وشكراً لصبركم وثقتكم.</div>
+      <div class="date-line">📺 HORIZON TV V14 — تجربة متجددة للمنزل والترفيه</div>
+      <div class="status">🚀 الإصدار الجديد جاهز للتحميل</div>
     </div>
-
     <div class="hero-actions">
       <a class="btn btn-gold" href="#download">🔥 منطقة التحميل</a>
       <a class="btn btn-ghost" href="#preview">▣ استكشف التطبيق</a>
@@ -157,41 +165,68 @@
   </section>
 
   <section class="container">
-    <div class="section-head"><h2>تجربة Horizon TV</h2><p>كل ما تحتاجه بتصميم واضح وتجربة مرتبة</p></div>
+    <div class="section-head"><h2>عالم HORIZON TV V14</h2><p>خاص للمنزل والترفيه — كل المشاهدة في مكان واحد</p></div>
+    <p class="feature-intro">برنامج بث مباشر يجمع باقات متنوعة ومحتوى رياضي وترفيهي، بواجهة أنيقة وتجربة مشاهدة سهلة لجميع أفراد المنزل.</p>
+    <div class="package-grid">
+      <div class="package-chip"><strong>📡 حتوت</strong><small>باقة متنوعة</small></div>
+      <div class="package-chip"><strong>⚽ beIN SPORTS</strong><small>باقة رياضية</small></div>
+      <div class="package-chip"><strong>🏆 ثمانية</strong><small>محتوى رياضي متنوع</small></div>
+      <div class="package-chip"><strong>🎨 ألوان</strong><small>باقة ترفيهية</small></div>
+      <div class="package-chip"><strong>🌅 الفجر</strong><small>قنوات متنوعة</small></div>
+      <div class="package-chip"><strong>🎬 20,000+ فيلم</strong><small>مكتبة أفلام واسعة</small></div>
+      <div class="package-chip"><strong>📺 15,000+ مسلسل</strong><small>مكتبة مسلسلات متنوعة</small></div>
+    </div>
     <div class="features">
-      <article class="card"><div class="icon">⚡</div><h3>تجربة سلسة</h3><p>واجهة منظمة وسهلة تساعدك على الوصول إلى الأقسام بسرعة.</p></article>
-      <article class="card"><div class="icon">📺</div><h3>أقسام متنوعة</h3><p>تنظيم المحتوى والقنوات ضمن تجربة مشاهدة واحدة.</p></article>
-      <article class="card"><div class="icon">🔥</div><h3>تحديثات Horizon</h3><p>تابع الإعلانات والأخبار الجديدة من القناة الرسمية.</p></article>
+      <article class="card"><div class="icon">⚡</div><h3>تجربة سلسة</h3><p>تصميم أنيق وسهل الاستخدام لجميع أفراد المنزل.</p></article>
+      <article class="card"><div class="icon">📺</div><h3>أقسام متنوعة</h3><p>باقات رياضية وترفيهية، بث مباشر ومكتبة ضخمة للأفلام والمسلسلات.</p></article>
+      <article class="card"><div class="icon">🔥</div><h3>تحديثات Horizon</h3><p>تابع قناة تيليجرام الرسمية لتصلك أخبار الباقات والتحديثات أولاً بأول.</p></article>
     </div>
   </section>
 
   <section class="container" id="download">
     <div class="launch-panel">
       <div class="launch-top">
-        <h2>🚀 منطقة الإطلاق والتحميل</h2>
-        <p>سيتم إظهار روابط التحميل وكود الشاشة عند حلول موعد الإطلاق</p>
+        <h2>🚀 تحميل HORIZON TV V14</h2>
+        <p>روابط تحميل الإصدار الجديد وكود تفعيل الشاشات</p>
       </div>
 
-      <div class="locked" id="locked">
+      <div class="locked" id="locked" style="display:none">
         <div class="lock-icon">🔐</div>
-        <h3>منطقة الإطلاق مغلقة مؤقتاً</h3>
-        <p>روابط التحميل وكود الشاشة راح تظهر تلقائياً بعد انتهاء العد التنازلي.</p>
+        <h3>تحميل الإصدار الجديد متاح</h3>
+        <p>يمكنك تحميل الإصدار V14 واستخدام كود الشاشة من هنا.</p>
       </div>
 
-      <div class="unlocked" id="unlocked">
-      </div>
+      <div class="unlocked show" id="unlocked">
+        <div class="download-grid">
+          <div class="download-box">
+            <h3>🔥 تحميل Horizon TV</h3>
+            <p>الإصدار الرسمي أصبح متاحاً. اختر رابط التحميل المناسب لجهازك.</p>
+            <div class="download-links">
+              <a class="download-link" href="https://raw.githubusercontent.com/Mqj20/HorizonTV-app-download-/main/HorizonTV.apk" target="_blank" rel="noopener">
+                <span class="emoji">📱</span><span><strong>تحميل التطبيق</strong><small>تنزيل ملف APK</small></span>
+              </a>
+              <a class="download-link" href="https://raw.githubusercontent.com/Mqj20/HorizonTV-app-download-/main/HorizonTV.apk" target="_blank" rel="noopener">
+                <span class="emoji">⬇️</span><span><strong>تحميل مباشر</strong><small>رابط التنزيل المباشر</small></span>
+              </a>
+            </div>
+          </div>
+          <div class="screen-code">
+            <h3>🎬 كود الشاشة</h3>
+            <p>استخدم الكود التالي على الشاشات المتوافقة</p>
+            <div class="code">7888669</div>
+            <p>للحصول على كود التفعيل ومتابعة التعليمات</p>
+            <a class="btn telegram-btn" href="https://t.me/X_9_KKKKK" target="_blank" rel="noopener">✈ قناة التلغرام الرسمية</a>
+          </div>
+        </div></div>
     </div>
   </section>
 
   <section class="container" id="preview">
-    <div class="section-head"><h2>لقطات من التطبيق</h2><p>اضغط على أي صورة لمشاهدتها بحجم أكبر</p></div>
+    <div class="section-head"><h2>لمحة من التطبيق</h2><p>صور مختارة للتعرّف على الواجهة</p></div>
     <div class="gallery">
       <div class="shot"><img src="logo.png" alt="شعار Horizon TV" loading="lazy"></div>
       <div class="shot"><img src="Screenshot_20261107_064547.jpg" alt="واجهة التطبيق" loading="lazy"></div>
       <div class="shot"><img src="Screenshot_20261107_064607.jpg" alt="قائمة القنوات" loading="lazy"></div>
-      <div class="shot"><img src="Screenshot_20261107_064622.jpg" alt="مشغل التطبيق" loading="lazy"></div>
-      <div class="shot"><img src="Screenshot_20261107_064634.jpg" alt="قسم التطبيق" loading="lazy"></div>
-      <div class="shot"><img src="Screenshot_20261107_064658.jpg" alt="واجهة المشاهدة" loading="lazy"></div>
     </div>
   </section>
 
@@ -204,67 +239,45 @@
 <footer>
   <img src="logo.png" alt="Horizon TV">
   <strong>HORIZON TV</strong>
-  <div>الموقع الرسمي • جميع الحقوق محفوظة © 2026</div>
+  <div>خاص للمنزل والترفيه • جميع الحقوق محفوظة © 2026</div>
 </footer>
 
 <canvas id="fx"></canvas>
-<div class="toast" id="toast">🎉 انطلق Horizon TV! 🎉</div>
+<div class="toast" id="toast">عذراً على تأجيل الموعد — تم إطلاق HORIZON TV V14 ✨</div>
 <div class="modal" id="modal">
   <button class="close" aria-label="إغلاق">×</button>
   <img id="modalImg" alt="معاينة الصورة">
 </div>
 
 <script>
-  // موعد الإطلاق: الجمعة 20 نوفمبر 2026، الساعة 4:00 مساءً بتوقيت العراق (UTC+3)
-  const releaseAt = new Date("2026-11-20T16:00:00+03:00").getTime();
-  const DATA = "CiAgICAgICAgPGRpdiBjbGFzcz0iZG93bmxvYWQtZ3JpZCI+CiAgICAgICAgICA8ZGl2IGNsYXNzPSJkb3dubG9hZC1ib3giPgogICAgICAgICAgICA8aDM+8J+UpSDYqtit2YXZitmEIEhvcml6b24gVFY8L2gzPgogICAgICAgICAgICA8cD7Yp9mE2KXYtdiv2KfYsSDYp9mE2LHYs9mF2Yog2KPYtdio2K0g2YXYqtin2K3Yp9mLLiDYp9iu2KrYsSDYsdin2KjYtyDYp9mE2KrYrdmF2YrZhCDYp9mE2YXZhtin2LPYqCDZhNis2YfYp9iy2YMuPC9wPgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJkb3dubG9hZC1saW5rcyI+CiAgICAgICAgICAgICAgPGEgY2xhc3M9ImRvd25sb2FkLWxpbmsiIGhyZWY9Imh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9NcWoyMC9Ib3Jpem9uVFYtYXBwLWRvd25sb2FkLS9tYWluL0hvcml6b25UVi5hcGsiIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIj4KICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzPSJlbW9qaSI+8J+TsTwvc3Bhbj48c3Bhbj48c3Ryb25nPtiq2K3ZhdmK2YQg2KfZhNiq2LfYqNmK2YI8L3N0cm9uZz48c21hbGw+2KrZhtiy2YrZhCDZhdmE2YEgQVBLPC9zbWFsbD48L3NwYW4+CiAgICAgICAgICAgICAgPC9hPgogICAgICAgICAgICAgIDxhIGNsYXNzPSJkb3dubG9hZC1saW5rIiBocmVmPSJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vTXFqMjAvSG9yaXpvblRWLWFwcC1kb3dubG9hZC0vbWFpbi9Ib3Jpem9uVFYuYXBrIiB0YXJnZXQ9Il9ibGFuayIgcmVsPSJub29wZW5lciI+CiAgICAgICAgICAgICAgICA8c3BhbiBjbGFzcz0iZW1vamkiPuKsh++4jzwvc3Bhbj48c3Bhbj48c3Ryb25nPtiq2K3ZhdmK2YQg2YXYqNin2LTYsTwvc3Ryb25nPjxzbWFsbD7Ysdin2KjYtyDYp9mE2KrZhtiy2YrZhCDYp9mE2YXYqNin2LTYsTwvc21hbGw+PC9zcGFuPgogICAgICAgICAgICAgIDwvYT4KICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICA8L2Rpdj4KICAgICAgICAgIDxkaXYgY2xhc3M9InNjcmVlbi1jb2RlIj4KICAgICAgICAgICAgPGgzPvCfjqwg2YPZiNivINin2YTYtNin2LTYqTwvaDM+CiAgICAgICAgICAgIDxwPtin2LPYqtiu2K/ZhSDYp9mE2YPZiNivINin2YTYqtin2YTZiiDYudmE2Ykg2KfZhNi02KfYtNin2Kog2KfZhNmF2KrZiNin2YHZgtipPC9wPgogICAgICAgICAgICA8ZGl2IGNsYXNzPSJjb2RlIj43ODg4NjY5PC9kaXY+CiAgICAgICAgICAgIDxwPtmE2YTYrdi12YjZhCDYudmE2Ykg2YPZiNivINin2YTYqtmB2LnZitmEINmI2YXYqtin2KjYudipINin2YTYqti52YTZitmF2KfYqjwvcD4KICAgICAgICAgICAgPGEgY2xhc3M9ImJ0biB0ZWxlZ3JhbS1idG4iIGhyZWY9Imh0dHBzOi8vdC5tZS9YXzlfS0tLS0siIHRhcmdldD0iX2JsYW5rIiByZWw9Im5vb3BlbmVyIj7inIgg2YLZhtin2Kkg2KfZhNiq2YTYutix2KfZhSDYp9mE2LHYs9mF2YrYqTwvYT4KICAgICAgICAgIDwvZGl2PgogICAgICAgIDwvZGl2Pg==";
-  const $ = id => document.getElementById(id);
 
+  // الإصدار V14 متاح الآن؛ تظهر رسالة الترحيب والاحتفال مرة واحدة لمدة 3 ثوانٍ.
+  const $ = id => document.getElementById(id);
+  $("locked").style.display = "none";
+  $("unlocked").classList.add("show");
+  window.addEventListener("load", () => {
+    if (!sessionStorage.getItem("horizonV14Welcome")) {
+      const t = $("toast");
+      t.classList.add("show");
+      setTimeout(() => t.classList.remove("show"), 3000);
+      sessionStorage.setItem("horizonV14Welcome", "1");
+      celebrate();
+    }
+  });
 
   function celebrate(){
-    const cv=$("fx"),ctx=cv.getContext("2d"),colors=["#ffd36a","#ffad32","#ff641f","#fff0b0","#ffffff","#ff8b35"];
+    const cv=$("fx"),ctx=cv.getContext("2d"),colors=["#ffd36a","#ffad32","#ff641f","#fff0b0","#ffffff"];
     const fit=()=>{cv.width=innerWidth;cv.height=innerHeight};fit();addEventListener("resize",fit);
     let ps=[];
-    const burst=(x,y,n)=>{for(let i=0;i<n;i++){const a=Math.random()*Math.PI*2,v=3+Math.random()*7;
-      ps.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-3,g:.12+Math.random()*.08,w:5+Math.random()*7,h:3+Math.random()*5,r:Math.random()*6,vr:(Math.random()-.5)*.4,c:colors[Math.random()*colors.length|0],life:150+Math.random()*90})}};
-    const rain=()=>{for(let i=0;i<6;i++)ps.push({x:Math.random()*cv.width,y:-10,vx:(Math.random()-.5)*2,vy:2+Math.random()*3,g:.03,w:6,h:9,r:Math.random()*6,vr:(Math.random()-.5)*.3,c:colors[Math.random()*colors.length|0],life:260})};
-    const t=$("toast");t.classList.add("show");setTimeout(()=>t.classList.remove("show"),5000);
-    let n=0,end=Date.now()+7000;
-    const shoot=setInterval(()=>{burst(cv.width*(.15+Math.random()*.7),cv.height*(.15+Math.random()*.35),55);if(++n>9)clearInterval(shoot)},550);
-    burst(cv.width/2,cv.height*.35,120);
+    for(let i=0;i<55;i++){const a=Math.random()*Math.PI*2,v=2+Math.random()*5;ps.push({x:cv.width/2,y:cv.height*.3,vx:Math.cos(a)*v,vy:Math.sin(a)*v-2,g:.12,w:5+Math.random()*5,h:3+Math.random()*4,r:Math.random()*6,vr:(Math.random()-.5)*.4,c:colors[Math.random()*colors.length|0],life:55+Math.random()*35});}
+    const end=Date.now()+3000;
     (function loop(){
       ctx.clearRect(0,0,cv.width,cv.height);
-      if(Date.now()<end)rain();
       ps=ps.filter(p=>p.life>0&&p.y<cv.height+20);
-      for(const p of ps){p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.vx*=.99;p.r+=p.vr;p.life--;
-        ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.globalAlpha=Math.min(1,p.life/40);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore()}
-      if(ps.length||Date.now()<end)requestAnimationFrame(loop);else ctx.clearRect(0,0,cv.width,cv.height);
+      for(const p of ps){p.x+=p.vx;p.y+=p.vy;p.vy+=p.g;p.r+=p.vr;p.life--;ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);ctx.globalAlpha=Math.min(1,p.life/20);ctx.fillStyle=p.c;ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);ctx.restore();}
+      if(ps.length&&Date.now()<end)requestAnimationFrame(loop);else ctx.clearRect(0,0,cv.width,cv.height);
     })();
   }
-
-  function updateCountdown(){
-    const remaining = releaseAt - Date.now();
-
-    if(remaining <= 0){
-      $("days").textContent = "00";
-      $("hours").textContent = "00";
-      $("minutes").textContent = "00";
-      $("seconds").textContent = "00";
-      $("status").textContent = "🔥 تم فتح الإطلاق!";
-      $("locked").style.display = "none";
-      if(!$("unlocked").dataset.ok){$("unlocked").innerHTML=new TextDecoder().decode(Uint8Array.from(atob(DATA),c=>c.charCodeAt(0)));$("unlocked").dataset.ok=1}
-      $("unlocked").classList.add("show");
-      if(!window.__celebrated){window.__celebrated=1;celebrate();}
-      return;
-    }
-
-    $("days").textContent = String(Math.floor(remaining / 86400000)).padStart(2,"0");
-    $("hours").textContent = String(Math.floor((remaining % 86400000) / 3600000)).padStart(2,"0");
-    $("minutes").textContent = String(Math.floor((remaining % 3600000) / 60000)).padStart(2,"0");
-    $("seconds").textContent = String(Math.floor((remaining % 60000) / 1000)).padStart(2,"0");
-  }
-  updateCountdown();
-  setInterval(updateCountdown,1000);
 
   const modal = $("modal"), modalImg = $("modalImg");
   document.querySelectorAll(".shot img").forEach(img => img.addEventListener("click",()=>{
